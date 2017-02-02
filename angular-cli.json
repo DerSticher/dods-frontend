@@ -18,9 +18,10 @@
       "prefix": "dods",
       "mobile": false,
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
-      "scripts": [],
+      "scripts": [ ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
