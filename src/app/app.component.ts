@@ -6,10 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  model = {
-    left: true,
-    middle: false,
-    right: false
-  };
+
   title = 'dods works!';
 }

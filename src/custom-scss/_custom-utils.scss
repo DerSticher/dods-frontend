@@ -1,0 +1,15 @@
+//fallback for ng2-select
+.pull-right {
+  @include float-right()
+}
+.pull-left {
+  @include float-left()
+}
+
+.herolist-width {
+  width: $herolist-width;
+}
+
+.bg-white {
+  background-color: white;
+}

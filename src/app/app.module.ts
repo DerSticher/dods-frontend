@@ -4,17 +4,36 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModule, ModalModule, TabsModule } from 'ng2-bootstrap';
+import {SelectModule} from 'ng2-select';
+
+import { RegelnComponent } from './regeln/regeln.component';
+import { SelectComponent } from './util/select/select.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { PersoenlichComponent } from './persoenlich/persoenlich.component';
+import { ProfanComponent } from './profan/profan.component';
+import { MagieComponent } from './magie/magie.component';
+import { KarmaComponent } from './karma/karma.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegelnComponent,
+    SelectComponent,
+    NavigationComponent,
+    PersoenlichComponent,
+    ProfanComponent,
+    MagieComponent,
+    KarmaComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot()
+    SelectModule,
+    AlertModule.forRoot(),
+    ModalModule.forRoot(),
+    TabsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,33 @@
+<div class="row mt-1">
+  <div class="col-md">
+    <h3>Fokusregeln</h3>
+
+    <div *ngFor="let number of [0,1,2,3,4,5]" class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox"> Fokusregel {{number}}
+      </label>
+    </div>
+    <div class="hidden-md-up">
+      <hr>
+    </div>
+  </div>
+  <div class="col-md">
+    <h3>Optionale Regeln</h3>
+
+    <div *ngFor="let number of [0,1,2,3,4,5]" class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox"> Optionale Regel {{number}}
+      </label>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<h3>Vorhandene Regelwerke</h3>
+
+<div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox"> Grundregelwerk 2. Auflage
+  </label>
+</div>
