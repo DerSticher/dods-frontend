@@ -5,12 +5,10 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CollapseComponent } from './collapse/collapse.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CollapseComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
