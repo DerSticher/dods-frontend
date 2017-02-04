@@ -1,33 +1,127 @@
+<p class="mt-1">
+  Bitte wähle alle Regeln und Werke, die für die Erstellung des Helden verwendet werden sollen.
+</p>
+<hr>
 <div class="row mt-1">
   <div class="col-md">
     <h3>Fokusregeln</h3>
 
-    <div *ngFor="let number of [0,1,2,3,4,5]" class="form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox"> Fokusregel {{number}}
-      </label>
+    <div *ngFor="let regel of fokusregeln" class="row">
+      <div class="col-sm-auto pl-1">
+        <label class="btn btn-sm" btnCheckbox
+               [(ngModel)]="regel.checked"
+               [ngClass]="{'btn-outline-success': regel.checked === true,
+                           'btn-outline-secondary': regel.checked === false}">
+          <i class="fa fa-check"></i>
+        </label>
+      </div>
+      <div class="col-sm-10">
+        <label>
+          <a class="simple-link" href="{{regel.link}}" rel="nofollow">
+            {{regel.name}}
+          </a>
+        </label>
+      </div>
     </div>
+
     <div class="hidden-md-up">
       <hr>
     </div>
+
   </div>
+
   <div class="col-md">
     <h3>Optionale Regeln</h3>
 
-    <div *ngFor="let number of [0,1,2,3,4,5]" class="form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox"> Optionale Regel {{number}}
-      </label>
+    <div *ngFor="let regel of optionalregeln" class="row">
+      <div class="col-sm-auto pl-1">
+        <label class="btn btn-sm" btnCheckbox
+               [(ngModel)]="regel.checked"
+               [ngClass]="{'btn-outline-success': regel.checked === true,
+                           'btn-outline-secondary': regel.checked === false}">
+          <i class="fa fa-check"></i>
+        </label>
+      </div>
+      <div class="col-sm-10">
+        <label class="">
+          {{regel.name}}
+        </label>
+      </div>
     </div>
   </div>
 </div>
 
 <hr>
 
-<h3>Vorhandene Regelwerke</h3>
+<h3>Vorhandene Werke</h3>
 
-<div class="form-check">
-  <label class="form-check-label">
-    <input class="form-check-input" type="checkbox"> Grundregelwerk 2. Auflage
-  </label>
+<div class="row mt-1">
+  <div class="col-md mb-1">
+
+    <h4>Regelwerke</h4>
+    <div *ngFor="let werk of regelwerke" class="row">
+      <div class="col-sm-auto pl-1">
+        <label class="btn btn-sm" btnCheckbox
+               [(ngModel)]="werk.checked"
+               [ngClass]="{'btn-outline-success': werk.checked === true,
+                           'btn-outline-secondary': werk.checked === false,
+                           'disabled': werk.name === 'Regelwerk' || werk.name === 'Aventurisches Kompendium'}">
+          <i class="fa fa-check"></i>
+        </label>
+      </div>
+      <div class="col-sm-10">
+        <label>
+          {{werk.name}}
+          <span *ngIf="werk.name === 'Regelwerk' || werk.name === 'Aventurisches Kompendium'">
+            <i class="simple-tooltip fa fa-question-circle-o"
+               tooltip="{{werk.name}} wird für das Spielen benötigt."></i>
+          </span>
+        </label>
+      </div>
+    </div>
+    <div class="hidden-md-up">
+      <hr>
+    </div>
+  </div>
+
+  <div class="col-md mb-1">
+    <h4>Quellbücher</h4>
+    <div *ngFor="let werk of quellbuecher" class="row">
+      <div class="col-sm-auto pl-1">
+        <label class="btn btn-sm" btnCheckbox
+               [(ngModel)]="werk.checked"
+               [ngClass]="{'btn-outline-success': werk.checked === true,
+                           'btn-outline-secondary': werk.checked === false}">
+          <i class="fa fa-check"></i>
+        </label>
+      </div>
+      <div class="col-sm-10">
+        <label>
+          {{werk.name}}
+        </label>
+      </div>
+    </div>
+  </div>
 </div>
+
+<hr>
+
+<div class="mb-1">
+  <h4>Regionalbände</h4>
+  <div *ngFor="let werk of regionalbaende" class="row">
+    <div class="col-sm-auto pl-1">
+      <label class="btn btn-sm" btnCheckbox
+             [(ngModel)]="werk.checked"
+             [ngClass]="{'btn-outline-success': werk.checked === true,
+                           'btn-outline-secondary': werk.checked === false}">
+        <i class="fa fa-check"></i>
+      </label>
+    </div>
+    <div class="col-sm-10">
+      <label>
+        {{werk.name}}
+      </label>
+    </div>
+  </div>
+</div>
+

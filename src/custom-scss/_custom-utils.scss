@@ -13,3 +13,15 @@
 .bg-white {
   background-color: white;
 }
+
+.simple-link {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.simple-tooltip {
+  &:hover {
+    cursor: help;
+  }
+}

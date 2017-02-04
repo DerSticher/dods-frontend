@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { AlertModule, ModalModule, TabsModule } from 'ng2-bootstrap';
+import { AlertModule, ButtonsModule, ModalModule, TabsModule, TooltipModule  } from 'ng2-bootstrap';
 import {SelectModule} from 'ng2-select';
 
 import { RegelnComponent } from './regeln/regeln.component';
@@ -32,8 +32,10 @@ import { KarmaComponent } from './karma/karma.component';
     HttpModule,
     SelectModule,
     AlertModule.forRoot(),
+    ButtonsModule.forRoot(),
     ModalModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    TooltipModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
