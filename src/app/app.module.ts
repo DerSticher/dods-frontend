@@ -14,6 +14,7 @@ import { PersoenlichComponent } from './persoenlich/persoenlich.component';
 import { ProfanComponent } from './profan/profan.component';
 import { MagieComponent } from './magie/magie.component';
 import { KarmaComponent } from './karma/karma.component';
+import { HttpTestComponent } from './http-test/http-test.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { KarmaComponent } from './karma/karma.component';
     PersoenlichComponent,
     ProfanComponent,
     MagieComponent,
-    KarmaComponent
+    KarmaComponent,
+    HttpTestComponent
   ],
   imports: [
     BrowserModule,
