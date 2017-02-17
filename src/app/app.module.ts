@@ -3,17 +3,17 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './components/app.component';
 import { AlertModule, ButtonsModule, ModalModule, TabsModule, TooltipModule  } from 'ng2-bootstrap';
 import {SelectModule} from 'ng2-select';
 
-import { RegelnComponent } from './regeln/regeln.component';
-import { SelectComponent } from './util/select/select.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { PersoenlichComponent } from './persoenlich/persoenlich.component';
-import { ProfanComponent } from './profan/profan.component';
-import { MagieComponent } from './magie/magie.component';
-import { KarmaComponent } from './karma/karma.component';
+import { RegelnComponent } from './components/regeln/regeln.component';
+import { SelectComponent } from './components/util/select/select.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { PersoenlichComponent } from './components/persoenlich/persoenlich.component';
+import { ProfanComponent } from './components/profan/profan.component';
+import { MagieComponent } from './components/magie/magie.component';
+import { KarmaComponent } from './components/karma/karma.component';
 
 @NgModule({
   declarations: [
