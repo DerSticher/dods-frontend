@@ -14,6 +14,10 @@ import { PersoenlichComponent } from './components/persoenlich/persoenlich.compo
 import { ProfanComponent } from './components/profan/profan.component';
 import { MagieComponent } from './components/magie/magie.component';
 import { KarmaComponent } from './components/karma/karma.component';
+import { FertigkeitenComponent } from './components/fertigkeiten/fertigkeiten.component';
+
+import { HttpService } from './services/http/http.service';
+import { FilterService } from './services/filter/filter.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { KarmaComponent } from './components/karma/karma.component';
     PersoenlichComponent,
     ProfanComponent,
     MagieComponent,
-    KarmaComponent
+    KarmaComponent,
+    FertigkeitenComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,10 @@ import { KarmaComponent } from './components/karma/karma.component';
     TabsModule.forRoot(),
     TooltipModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    HttpService,
+    FilterService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

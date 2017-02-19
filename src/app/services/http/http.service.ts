@@ -7,8 +7,12 @@ import 'rxjs/Rx';
 export class HttpService {
 
     private token: string;
-    private baseurl: string = 'http://localhost:8000/';
+    private baseurl: string = 'http://localhost:8080';
     private useBaseurl: boolean = true;
+    private headers: any = {
+        'Accept': 'application/json',
+        'Accept-Charset': 'utf-8'
+    };
 
     constructor(
         private http: Http
@@ -44,7 +48,7 @@ export class HttpService {
     }
 
     get(url: string, data: any) {
-        let headers = new Headers();
+        let headers = this.createHeaders({});
         this.createAuthorizationHeader(headers);
         let query = this.createQueryString(data);
         return this.http.get(this.getUrl(url + query), {
@@ -63,7 +67,7 @@ export class HttpService {
     }
 
     post(url: string, data: any) {
-        let headers = new Headers(
+        let headers = this.createHeaders(
             { 'Content-Type': 'application/json' }
         );
         this.createAuthorizationHeader(headers);
@@ -82,7 +86,7 @@ export class HttpService {
     }
 
     put(url: string, data: any) {
-        let headers = new Headers(
+        let headers = this.createHeaders(
             { 'Content-Type': 'application/json' }
         );
         this.createAuthorizationHeader(headers);
@@ -101,7 +105,7 @@ export class HttpService {
     }
     // data:any
     delete(url: string) {
-        let headers = new Headers(
+        let headers = this.createHeaders(
             { 'Content-Type': 'application/json' }
         );
         this.createAuthorizationHeader(headers);
@@ -144,4 +148,15 @@ export class HttpService {
         return finalUrl;
     }
 
+    private createHeaders(additionalHeaders: any) {
+        let headers = {};
+        for (let header in this.headers) {
+            headers[header] = this.headers[header];
+        }
+
+        for (let header in additionalHeaders) {
+            headers[header] = additionalHeaders[header];
+        }
+        return new Headers(headers);
+    }
 }

@@ -1,0 +1,28 @@
+<div class="row mt-1">
+  <div class="col-md">
+    <h3>Fertigkeiten</h3>
+    <button class="btn btn-primary" (click)="toggleFilter()">{{activeFilter}}</button>
+    <div *ngFor="let fertigkeit of displayedFertigkeiten" class="row">
+      <div class="col-sm-auto pl-1">
+        <label class="btn btn-sm" btnCheckbox
+               [(ngModel)]="fertigkeit.checked"
+               [ngClass]="{'btn-outline-success': fertigkeit.checked === true,
+                           'btn-outline-secondary': fertigkeit.checked === false}">
+          <i class="fa fa-check"></i>
+        </label>
+      </div>
+      <div class="col-sm-10">
+        <label>
+          <a class="simple-link" href="{{fertigkeit.getWikiUrl()}}" rel="nofollow">
+            {{fertigkeit.getName()}}
+          </a>
+        </label>
+      </div>
+    </div>
+
+    <div class="hidden-md-up">
+      <hr>
+    </div>
+
+  </div>
+</div>
