@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './components/app.component';
-import { AlertModule, ButtonsModule, ModalModule, TabsModule, TooltipModule  } from 'ng2-bootstrap';
+import { AlertModule, ButtonsModule, ModalModule, TabsModule, TooltipModule, DropdownModule } from 'ng2-bootstrap';
 import {SelectModule} from 'ng2-select';
 
 import { RegelnComponent } from './components/regeln/regeln.component';
@@ -18,6 +18,7 @@ import { FertigkeitenComponent } from './components/fertigkeiten/fertigkeiten.co
 
 import { HttpService } from './services/http/http.service';
 import { FilterService } from './services/filter/filter.service';
+import { InputDropdownnComponent } from './components/util/input-dropdownn/input-dropdownn.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FilterService } from './services/filter/filter.service';
     ProfanComponent,
     MagieComponent,
     KarmaComponent,
-    FertigkeitenComponent
+    FertigkeitenComponent,
+    InputDropdownnComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { FilterService } from './services/filter/filter.service';
     ButtonsModule.forRoot(),
     ModalModule.forRoot(),
     TabsModule.forRoot(),
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    DropdownModule.forRoot()
   ],
   providers: [
     HttpService,

@@ -42,7 +42,4 @@ export class SelectComponent {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
 }

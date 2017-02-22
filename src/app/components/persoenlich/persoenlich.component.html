@@ -1,18 +1,11 @@
-<p>
-  persoenlich works!
-</p>
-
 <form>
-
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-5">
-      <dods-select [placeholder]="'Vorname'">
-      </dods-select>
+      <dods-input-dropdownn [placeholder]="'Vorname'" (textUpdated)="handle($event)"></dods-input-dropdownn>
     </div>
     <div class="col-sm-5">
-      <dods-select [placeholder]="'Nachname'">
-      </dods-select>
+      <dods-input-dropdownn [placeholder]="'Nachname'" (textUpdated)="handle($event)"></dods-input-dropdownn>
     </div>
   </div>
 

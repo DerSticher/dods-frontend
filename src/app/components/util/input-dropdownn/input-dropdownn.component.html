@@ -1,0 +1,12 @@
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="{{placeholder}}" [(ngModel)]="inputText" (change)="onInputChange()">
+
+  <div class="input-group-btn" dropdown>
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" dropdownToggle>
+    </button>
+    <ul class="dropdown-menu" dropdownMenu role="menu" aria-labelledby="split-button">
+      <li *ngFor="let option of options" role="menuitem"><a class="dropdown-item" (click)="onClick(option)">{{option}}</a></li>
+    </ul>
+  </div>
+</div>
